@@ -9,16 +9,18 @@
  * @author a1562339
  */
 public class Elipse {
-    private double area;
-    private double perimetro;
-    
-    public double getArea(double r, double s){
-        this.area = Math.PI*r*s;
-        return this.area;
+    private double semiex;
+    private double semiey;
+    public Elipse(double x, double y){
+        this.semiex = x;
+        this.semiey = y;
     }
-    public double getPerimetro(double r, double s){
-        this.perimetro = Math.PI*Math.abs(3*(r + s) - Math.sqrt((3*r + s)*(r + 3*s)));
+    
+    public double getArea(){        
+        return Math.PI*this.semiex*this.semiey;
+    }
+    public double getPerimetro(){        
         
-        return this.perimetro;
+        return Math.PI*Math.abs(3*(this.semiex + this.semiey) - Math.sqrt((3*this.semiex + this.semiey)*(this.semiex + 3*this.semiey)));
     }
 }
